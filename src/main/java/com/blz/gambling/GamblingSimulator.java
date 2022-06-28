@@ -22,8 +22,16 @@ public class GamblingSimulator {
         }
         System.out.println("Stake: "+(stake+stakePerDay));
     }
+    public static void resignDayCheck() {
+        int totalStake = 0;
+        while (stake != 50 && stake != -50) {
+            winCheck();
+        }
+        totalStake = stake + stakePerDay;
+        System.out.println("Total Stack for resign of a day is: "+totalStake);
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling Simulator");
-        winCheck();
+        resignDayCheck();
     }
 }
