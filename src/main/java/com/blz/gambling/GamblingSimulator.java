@@ -1,6 +1,7 @@
 package com.blz.gambling;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class GamblingSimulator {
 
@@ -69,6 +70,17 @@ public class GamblingSimulator {
     }
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling Simulator");
-        monthlyWinOrLossCheck();
+        while (true){
+            /*
+             * Using Scanner class taking input from the user to play or stop gambling.
+             */
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter 1 to play again or Enter 0 to Exit");
+            int choice = sc.nextInt();
+            if (choice == 0) {
+                break;
+            }
+            monthlyWinOrLossCheck();
+        }
     }
 }
