@@ -51,10 +51,12 @@ public class GamblingSimulator {
             if (stake == 50) {
                 daysWonCount++;
                 totalStake = totalStake + stake;
+                System.out.println("It was my luckiest Day!!");
             }
             else if (stake == -50) {
                 daysLostCount++;
                 totalStake = totalStake + stake;
+                System.out.println("It was my Unluckiest Day!!");
             }
         }
         if (totalStake < 0) {
