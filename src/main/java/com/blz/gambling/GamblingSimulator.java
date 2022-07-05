@@ -11,6 +11,9 @@ public class GamblingSimulator {
     static int daysWonCount = 0;
     static int daysLostCount = 0;
 
+    /*
+     * winCheck function will check if gambler wins or loss
+     */
     public static void winCheck() {
         Random random = new Random();
         int betReturns = random.nextInt(2);
@@ -24,6 +27,10 @@ public class GamblingSimulator {
         }
         System.out.println("Stake: "+(stake+stakePerDay));
     }
+    /*
+     * As a Calculative Gambler if won or lost 50% of the stake, would resign for
+     * the day
+     */
     public static void resignDayCheck() {
         int totalStake = 0;
         while (stake != 50 && stake != -50) {
@@ -32,6 +39,10 @@ public class GamblingSimulator {
         totalStake = stake + stakePerDay;
         System.out.println("Total Stack for resign of a day is: "+totalStake);
     }
+    /*
+     * After 20 days of playing every day would like to know the total amount won or
+     * lost.
+     */
     public static void monthlyWinOrLossCheck() {
         int totalStake = 0;
         for (int i = 0; i <= 20; i++) {
@@ -52,6 +63,7 @@ public class GamblingSimulator {
         else {
             System.out.println("After playing for 20 days Gambler won total amount: $"+totalStake);
         }
+        System.out.println(daysWonCount+ " Days won for a month \n" +daysLostCount+ " Days lost for a month");
     }
     public static void main(String[] args) {
         System.out.println("Welcome to Gambling Simulator");
